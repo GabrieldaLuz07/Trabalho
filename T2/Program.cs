@@ -77,12 +77,9 @@ static void maisEstoque(List<Produto> produtos)
 
 static void categoriaVendida(List<Produto> produtos)
 {
-    var lista = produtos.OrderByDescending(p => p.QtdVendida).Take(1);
+    var produto = produtos.OrderByDescending(p => p.QtdVendida).Take(1).First();
     Console.WriteLine("Categoria mais vendida: ");
-    foreach (Produto produto in lista)
-    {
-        Console.WriteLine($"{produto.Categoria}");
-    }
+    Console.WriteLine($"{produto.Categoria}");
 }
 
 static void menosVendido(List<Produto> produtos)
