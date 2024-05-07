@@ -8,7 +8,6 @@ namespace ApiWebDB.Services.Exceptions
         public InvalidEntityExceptions(string message) : base(message)
         {
 
-
         }
 
     }

@@ -6,8 +6,7 @@ namespace ApiWebDB.Services.Validate
 {
     public class ClienteValidate
     {
-        private static bool ValidateDocument(
-            TipoDocumento tipo, string documento)
+        private static bool ValidateDocument(TipoDocumento tipo, string documento)
         {
             switch (tipo)
             {
@@ -42,6 +41,9 @@ namespace ApiWebDB.Services.Validate
 
             if (string.IsNullOrEmpty(dto.Documento))
                 throw new InvalidEntityExceptions("Campo Documento é obrigatório");
+
+            if (dto.Tipodoc < 0)
+                throw new InvalidEntityExceptions("Campo tipo de documento não pode ser nulo");
 
             TipoDocumento tipo;
             try
